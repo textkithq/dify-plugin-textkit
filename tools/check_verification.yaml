@@ -1,0 +1,31 @@
+identity:
+  name: check_verification
+  author: textkit
+  label:
+    en_US: Check verification
+description:
+  human:
+    en_US: Check the one-time code a user entered. A wrong code returns verified false.
+  llm: Check the one-time code a user entered. A wrong code returns verified false.
+parameters:
+- name: phone
+  type: string
+  required: true
+  label:
+    en_US: Phone number
+  human_description:
+    en_US: The number the code was texted to, in E.164 format.
+  llm_description: The number the code was texted to, in E.164 format.
+  form: llm
+- name: code
+  type: string
+  required: true
+  label:
+    en_US: Code
+  human_description:
+    en_US: The code the user entered.
+  llm_description: The code the user entered.
+  form: llm
+extra:
+  python:
+    source: tools/check_verification.py

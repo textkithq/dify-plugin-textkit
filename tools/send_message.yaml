@@ -1,0 +1,42 @@
+identity:
+  name: send_message
+  author: textkit
+  label:
+    en_US: Send text
+description:
+  human:
+    en_US: Send an SMS from your TextKit number.
+  llm: Send an SMS from your TextKit number.
+parameters:
+- name: to
+  type: string
+  required: true
+  label:
+    en_US: To
+  human_description:
+    en_US: Recipient phone number in E.164 format, for example +15551234567.
+  llm_description: Recipient phone number in E.164 format, for example +15551234567.
+  form: llm
+- name: body
+  type: string
+  required: true
+  label:
+    en_US: Message
+  human_description:
+    en_US: The text to send.
+  llm_description: The text to send.
+  form: llm
+- name: from
+  type: string
+  required: false
+  label:
+    en_US: From
+  human_description:
+    en_US: One of your numbers, or a sender pool id. Optional when the account has
+      exactly one number.
+  llm_description: One of your numbers, or a sender pool id. Optional when the account
+    has exactly one number.
+  form: llm
+extra:
+  python:
+    source: tools/send_message.py

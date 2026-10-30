@@ -1,0 +1,31 @@
+identity:
+  name: send_verification
+  author: textkit
+  label:
+    en_US: Send verification
+description:
+  human:
+    en_US: Text a one-time code to a phone number.
+  llm: Text a one-time code to a phone number.
+parameters:
+- name: phone
+  type: string
+  required: true
+  label:
+    en_US: Phone number
+  human_description:
+    en_US: The number to text the code to, in E.164 format.
+  llm_description: The number to text the code to, in E.164 format.
+  form: llm
+- name: app_name
+  type: string
+  required: false
+  label:
+    en_US: App name
+  human_description:
+    en_US: Your product name, shown in the message.
+  llm_description: Your product name, shown in the message.
+  form: llm
+extra:
+  python:
+    source: tools/send_verification.py

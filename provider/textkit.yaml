@@ -1,0 +1,30 @@
+identity:
+  author: textkit
+  name: textkit
+  label:
+    en_US: TextKit
+  description:
+    en_US: Send texts, list messages and verify phone numbers with TextKit, an SMS API.
+  icon: icon.svg
+  tags:
+    - social
+    - productivity
+credentials_for_provider:
+  api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: TextKit API key
+    help:
+      en_US: Create a key in the TextKit console. A test key (ssms_sk_test_...) simulates sends. A live key texts real numbers.
+    placeholder:
+      en_US: ssms_sk_...
+    url: https://jointextkit.com/console
+tools:
+  - tools/send_message.yaml
+  - tools/list_messages.yaml
+  - tools/send_verification.yaml
+  - tools/check_verification.yaml
+extra:
+  python:
+    source: provider/textkit.py

@@ -1,0 +1,78 @@
+identity:
+  name: list_messages
+  author: textkit
+  label:
+    en_US: List messages
+description:
+  human:
+    en_US: List sent and received texts, newest first.
+  llm: List sent and received texts, newest first.
+parameters:
+- name: number
+  type: string
+  required: false
+  label:
+    en_US: Phone number
+  human_description:
+    en_US: Only messages to or from this number, in E.164 format.
+  llm_description: Only messages to or from this number, in E.164 format.
+  form: llm
+- name: direction
+  type: select
+  required: false
+  label:
+    en_US: Direction
+  human_description:
+    en_US: Only outbound (sent) or inbound (received) messages.
+  llm_description: Only outbound (sent) or inbound (received) messages.
+  form: llm
+  options:
+  - value: outbound
+    label:
+      en_US: Outbound
+  - value: inbound
+    label:
+      en_US: Inbound
+- name: status
+  type: select
+  required: false
+  label:
+    en_US: Status
+  human_description:
+    en_US: Only messages with this status.
+  llm_description: Only messages with this status.
+  form: llm
+  options:
+  - value: queued
+    label:
+      en_US: Queued
+  - value: sent
+    label:
+      en_US: Sent
+  - value: delivered
+    label:
+      en_US: Delivered
+  - value: failed
+    label:
+      en_US: Failed
+  - value: blocked
+    label:
+      en_US: Blocked
+  - value: received
+    label:
+      en_US: Received
+- name: limit
+  type: number
+  required: false
+  label:
+    en_US: Limit
+  human_description:
+    en_US: How many messages to return, from 1 to 100. Default 25.
+  llm_description: How many messages to return, from 1 to 100. Default 25.
+  form: llm
+  default: 25
+  min: 1
+  max: 100
+extra:
+  python:
+    source: tools/list_messages.py
