@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 author: textkit
 name: textkit
@@ -6,7 +6,7 @@ label:
   en_US: TextKit
 description:
   en_US: Send texts, list messages and verify phone numbers from Dify with TextKit, an SMS API.
-icon: icon.svg
+icon: icon.png
 resource:
   memory: 268435456
   permission:
@@ -19,7 +19,7 @@ tags:
   - social
   - productivity
 meta:
-  version: 0.0.1
+  version: 0.0.2
   arch:
     - amd64
     - arm64

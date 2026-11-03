@@ -5,7 +5,7 @@ identity:
     en_US: TextKit
   description:
     en_US: Send texts, list messages and verify phone numbers with TextKit, an SMS API.
-  icon: icon.svg
+  icon: icon.png
   tags:
     - social
     - productivity
